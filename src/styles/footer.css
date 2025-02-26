@@ -1,0 +1,12 @@
+#footer {
+    color: white;
+    background-color: #1d1c3b;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+}
+
+#footer_description a {
+    font-size: 1.5rem;
+    padding: 3px;
+}

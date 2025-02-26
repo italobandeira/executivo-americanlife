@@ -1,0 +1,22 @@
+#plano {
+    text-align: center; /* Centraliza o conteúdo dentro da section */
+    padding: 50px;
+    padding-top: 90px;
+    padding-bottom: 100px;
+}
+
+#plano iframe {
+    max-width: 100%; /* Garante que o vídeo não ultrapasse a largura da tela */
+    height: auto; /* Mantém a proporção do vídeo */
+    aspect-ratio: 16 / 9; /* Proporção padrão para vídeos do YouTube */
+    border: none;
+    justify-content: center;
+}
+
+@media screen and (max-width: 1170px) {
+    #plano h1 {
+        text-align: center;
+        font-size: 2rem;
+        padding: 20px;
+    }
+}

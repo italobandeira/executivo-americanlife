@@ -1,0 +1,126 @@
+#sobre {
+    background-color: #1d1c3b;
+    display: flex;
+    position: relative;
+    text-align: center;
+    padding-top: 90px;
+    padding-bottom: 150px;
+}
+
+#plano h1 {
+    text-align: center;
+    font-size: 3rem;
+    color: var(--color-primary-3);
+}
+
+#conteudo_sobre {
+    color: white;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+#conteudo_sobre .title {
+    font-size: 3rem;
+    color: var(--color-neutral-0);
+}
+
+#conteudo_sobre .title-2 {
+    font-size: 2rem;
+    color: var(--color-neutral-0);
+}
+
+#conteudo_sobre .title, .title-2 span {
+    color: var(--color-primary-3);
+}
+
+#conteudo_sobre .description {
+    font-size: 1.3rem;
+}
+
+.card-container i {
+    font-size: 2rem;
+    margin-bottom: 20%;
+}
+
+/* Container dos cards */
+.card-container {
+    color: black;
+    display: flex;
+    flex-wrap: wrap; /* permite que os cards "quebrem" a linha em telas menores */
+    gap: 20px; /* espaçamento entre os cards */
+    justify-content: center; /* centraliza os cards */
+}
+
+/* Estilo dos cards */
+.card {
+    background-color: white;
+    width: calc(33.33% - 20px); /* 3 cards por linha com espaçamento */
+    max-width: 250px; /* limite de largura para não esticarem demais */
+    box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.2);
+    padding: 18px 36px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 16px 32px 0 rgba(255, 255, 255, 0.2);
+    transition: 0.3s;
+}
+
+@media screen and (max-width: 1170px) {
+    #sobre {
+        margin-top: 10%;
+        min-height: 100%;
+        padding-top: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #conteudo_sobre {
+        width: 100%;
+        text-align: center;
+        align-items: center;
+    }
+
+    #banner {
+        width: 100%;
+        align-items: start;
+        justify-content: center;
+    }
+
+    #banner img {
+        width: 140%;
+    }
+
+    .card {
+        width: 100%; /* um abaixo do outro no mobile */
+    }
+
+    #conteudo_sobre .title {
+        font-size: 2rem;
+        color: var(--color-neutral-0);
+    }
+    
+    #conteudo_sobre .title-2 {
+        font-size: 1.5rem;
+        color: var(--color-neutral-0);
+    }
+    
+    #conteudo_sobre .title, .title-2 span {
+        color: var(--color-primary-3);
+    }
+    
+    #conteudo_sobre .description {
+        font-size: 1.2rem;
+    }
+}
+
+/* @media screen and (max-width: 450px) {
+    #phone_button button {
+        display: none;
+    }
+} */

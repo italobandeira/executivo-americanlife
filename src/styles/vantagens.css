@@ -1,0 +1,145 @@
+#vantagens {
+    display: flex;
+    position: relative;
+    text-align: center;
+    padding-top: 70px;
+    padding-bottom: 90px;
+}
+
+#plano h1 {
+    text-align: center;
+    font-size: 3rem;
+    color: var(--color-primary-3);
+}
+
+#conteudo_vantagens {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+#conteudo_vantagens .title {
+    font-size: 3rem;
+    color: var(--color-neutral-1);
+}
+
+#conteudo_vantagens .title span {
+    color: var(--color-primary-3);
+}
+
+.card-container i {
+    margin-top: 20%;
+    font-size: 2rem;
+    margin-bottom: 20%;
+}
+
+/* Container dos cards */
+.card-container {
+    color: black;
+    display: flex;
+    flex-wrap: wrap; /* permite que os cards "quebrem" a linha em telas menores */
+    gap: 20px; /* espaçamento entre os cards */
+    justify-content: center; /* centraliza os cards */
+}
+
+/* Estilo dos cards */
+.card {
+    width: calc(33.33% - 20px); /* 3 cards por linha com espaçamento */
+    max-width: 300px; /* limite de largura para não esticarem demais */
+    padding: 18px 36px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.card p {
+    text-align: justify;
+    padding-top: 10px;
+}
+
+.card:hover {
+    box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.button .btn-default {
+    background-color: var(--color-primary-3);
+    border: none;
+    padding: 15px 60px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 3%;
+}
+
+.button .btn-default a {
+    color: white;
+    text-decoration: none;
+}
+
+.button .btn-default:hover {
+    background-color: var(--color-neutral-1);
+}
+
+@media screen and (max-width: 1170px) {
+    #vantagens {
+        margin-top: 10%;
+        min-height: 100%;
+        padding-top: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #conteudo_vantagens {
+        width: 100%;
+        text-align: center;
+        align-items: center;
+    }
+
+    #banner {
+        width: 100%;
+        align-items: start;
+        justify-content: center;
+    }
+
+    #banner img {
+        width: 140%;
+    }
+
+    .card {
+        width: 100%; /* um abaixo do outro no mobile */
+    }
+
+    #conteudo_vantagens .title {
+        font-size: 2rem;
+        color: var(--color-neutral-1);
+    }
+    
+    #conteudo_vantagens .title span {
+        color: var(--color-primary-3);
+    }
+    
+    .card-container i {
+        font-size: 1.5rem;
+        margin-bottom: 20%;
+    }
+
+    .button .btn-default {
+        padding: 15px 40px;
+        font-size: 1.2rem;
+    }
+}
+
+/* @media screen and (max-width: 450px) {
+    #phone_button button {
+        display: none;
+    }
+} */
