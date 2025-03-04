@@ -69,16 +69,4 @@ $(document).ready(function() {
         duration: 1000,
         distance: '20%'
     })
-
-    ScrollReveal().reveal('#plano_negocio', {
-        origin: 'down',
-        duration: 1000,
-        distance: '20%'
-    })
-
-    ScrollReveal().reveal('#conteudo_vantagens', {
-        origin: 'down',
-        duration: 1000,
-        distance: '20%'
-    })
 });
