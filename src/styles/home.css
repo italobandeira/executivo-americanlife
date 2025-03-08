@@ -2,14 +2,13 @@
     background-color: #1d1c3b;
     display: flex;
     position: relative;
-
-    width: 100%;
-    min-height: 40vh; /* Altura mínima */
-    max-height: 70vh; /* Altura máxima */
+     width: 100%;
+    min-height: 40vh;
+    max-height: 70vh; 
     padding: 0px;
     padding-right: 150px;
     padding-left: 150px;
-    overflow: hidden; /* Impede que elementos saiam da section */
+    overflow: hidden; 
 }
 
 #cta {
@@ -107,6 +106,7 @@
         padding: 0px;
         padding-right: 5px;
         padding-left: 5px;
+        overflow: hidden;
     }
 
     #american {
@@ -156,7 +156,7 @@
     }
 
     #banner img {
-        max-width: 40%;
+        max-width: auto;
         height: auto;
         object-fit: contain; /* Garante que a imagem se ajuste sem distorcer */
     }
