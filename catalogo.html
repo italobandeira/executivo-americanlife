@@ -12,19 +12,33 @@
     <title>Executivo - American Life</title>
 
     <style>
-        body, html {
+        * {
             margin: 0;
             padding: 0;
-            height: 100%;
+            box-sizing: border-box;
         }
-        .pdf-container {
-            width: 100%;
-            height: 100vh;
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 10px;
         }
-        iframe {
+        #pdf-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+        .pdf-page {
             width: 100%;
-            height: 100%;
-            border: none;
+            max-width: 100%;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            background: white;
+        }
+        @media (max-width: 768px) {
+            .pdf-page {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -91,9 +105,47 @@
         </div>
     </header>
     <main>
-        <div class="pdf-container">
-            <iframe src="src\assets\Catalogo American Life - Janeiro -2025 - vs 1.pdf"></iframe>
-        </div>
+        <div id="pdf-container"></div>
+    
+        <script type="module">
+            import * as pdfjsLib from 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.min.mjs';
+    
+            const pdfUrl = 'src/assets/Catalogo American Life - Janeiro -2025 - vs 1.pdf'; // Caminho local do PDF
+            pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.worker.min.mjs';
+    
+            async function renderPDF() {
+                try {
+                    const pdf = await pdfjsLib.getDocument(pdfUrl).promise;
+                    const container = document.getElementById('pdf-container');
+    
+                    for (let pageNumber = 1; pageNumber <= pdf.numPages; pageNumber++) {
+                        const page = await pdf.getPage(pageNumber);
+                        const viewport = page.getViewport({ scale: 1.5 });
+    
+                        const canvas = document.createElement('canvas');
+                        canvas.width = viewport.width;
+                        canvas.height = viewport.height;
+
+                         // Tamanho real da página
+                        canvas.width = viewport.width;
+                        canvas.height = viewport.height;
+
+                        // Redimensionar para caber na tela (responsivo)
+                        canvas.style.maxWidth = '100%';
+                        canvas.style.height = 'auto';
+    
+                        const context = canvas.getContext('2d');
+                        await page.render({ canvasContext: context, viewport: viewport }).promise;
+    
+                        container.appendChild(canvas);
+                    }
+                } catch (error) {
+                    console.error('Erro ao carregar o PDF:', error);
+                }
+            }
+    
+            renderPDF();
+        </script>
     </main>
     
     <script src="src/javascript/script.js"></script>
