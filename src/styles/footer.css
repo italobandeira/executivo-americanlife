@@ -10,3 +10,42 @@
     font-size: 1.5rem;
     padding: 3px;
 }
+
+footer {
+    height: 100px;
+    padding: 40px;
+    background-color: rgb(240, 240, 240);
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+}
+
+.botao-flutuante {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ac1450; /* Cor chamativa */
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+}
+
+.botao-flutuante:hover {
+    background-color: #ad436d;
+    transform: scale(1.1);
+}
+
+@media screen and (max-width: 1170px) {
+    footer {
+        padding: 20px;
+        background-color: rgb(240, 240, 240);
+        align-items: center;
+        justify-items: center;
+        text-align: center;
+    }
+}

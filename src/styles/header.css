@@ -21,6 +21,12 @@ header {
     gap: 48px;
 }
 
+#nav_list_catalogo {
+    display: flex;
+    list-style: none;
+    gap: 48px;
+}
+
 #cadastro {
     color: white;
     text-decoration: none;
@@ -37,6 +43,17 @@ header {
     border-bottom: 3px solid var(--color-primary-3);
 }
 
+.nav-item-catalogo a {
+    text-decoration: none;
+    color: #1d1d1dad;
+    font-weight: 600;
+}
+
+.nav-item-catalogo.active a {
+    color: var(--color-neutral-1);
+    border-bottom: 3px solid var(--color-primary-3);
+}
+
 #mobile_btn {
     display: none;
 }
@@ -46,7 +63,7 @@ header {
 }
 
 @media screen and (max-width: 1170px) {
-    #nav_list,
+    #nav_list, #nav_list_catalogo,
     #navbar .btn-default {
         display: none;
     }
@@ -73,6 +90,11 @@ header {
     }
 
     #mobile_nav_list .nav-item {
+        list-style: none;
+        text-align: center;
+    }
+
+    #mobile_nav_list .nav-item-catalogo {
         list-style: none;
         text-align: center;
     } 
